@@ -1,6 +1,6 @@
 import java.util.*;
 
-class ex05 {
+class ex05For {
     public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
 
@@ -22,14 +22,11 @@ class ex05 {
 
     public static void contarPares(int numInicio, int numFim){
 
-        while(numInicio <= numFim){
-
+        for ( ; numInicio <= numFim; numInicio++){
             if (numInicio % 2 ==0){
                 System.out.println(numInicio);
-            } 
+            }
+        }          
 
-            numInicio++;
-        }
-        
 }
 }

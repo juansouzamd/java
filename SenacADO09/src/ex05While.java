@@ -1,10 +1,10 @@
 import java.util.*;
 
-class ex04 {
+class ex05While {
     public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
 
-    System.out.println("===== Exercício 4 =====");
+    System.out.println("===== Exercício 5 =====");
 
     System.out.println("Digite o primeiro número");
         int numero01 = in.nextInt();
@@ -14,17 +14,21 @@ class ex04 {
 
     System.out.println(); //pular linha
 
-    contarRegressivo(numero01, numero02);
+    contarPares(numero01, numero02);
 
     in.close();
 
     }
 
-    public static void contarRegressivo(int numFim, int numInicio){
+    public static void contarPares(int numInicio, int numFim){
 
-        while(numFim >= numInicio){
-            System.out.println(numFim);
-            numFim--;
+        while(numInicio <= numFim){
+
+            if (numInicio % 2 ==0){
+                System.out.println(numInicio);
+            } 
+
+            numInicio++;
         }
         
 }

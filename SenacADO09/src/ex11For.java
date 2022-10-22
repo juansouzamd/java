@@ -1,6 +1,6 @@
 import java.util.*;
 
-class app {
+class ex11For {
     public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
 
@@ -18,22 +18,21 @@ class app {
 }
 
     public static void soletrar(String mensagem){
-        int contador = 0;
         int numero = 1;
         int letrasMenagem = mensagem.length();
         int espaco = mensagem.indexOf(" ");
 
-    while(contador < letrasMenagem){
 
-        if (contador == espaco){
-            System.out.println("Espaço");
-        } else {
-            System.out.println("Letra " + numero + " = " + mensagem.charAt(contador));
-            numero++;
+        for (int i = 0; i < letrasMenagem; i++){
+
+            if (i == espaco){
+                System.out.println("Espaço");
+            } else {
+                System.out.println("Letra " + numero + " = " + mensagem.charAt(i));
+                numero++;
+            }
+
         }
-      
-        contador++;
-    }
 
     }
 }

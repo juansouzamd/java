@@ -1,6 +1,6 @@
 import java.util.*;
 
-class ex06 {
+class ex06For {
     public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
 
@@ -18,13 +18,11 @@ class ex06 {
     }
 
     public static void linha(int tamanho){
-        int contador = 1;
         String asterisco = "* ";
 
-        while(contador <= tamanho){
+        for (int i = 1; i <= tamanho; i++){
             System.out.print(asterisco);
-            contador++;
         }
-        
+            
 }
 }

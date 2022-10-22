@@ -1,6 +1,6 @@
 import java.util.*;
 
-class ex10 {
+class ex10While {
     public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
 

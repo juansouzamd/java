@@ -1,6 +1,6 @@
 import java.util.*;
 
-class ex11 {
+class ex11While {
     public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
 
@@ -31,7 +31,7 @@ class ex11 {
             System.out.println("Letra " + numero + " = " + mensagem.charAt(contador));
             numero++;
         }
-      
+    
         contador++;
     }
 

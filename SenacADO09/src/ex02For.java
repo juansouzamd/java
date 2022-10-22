@@ -1,6 +1,6 @@
 import java.util.*;
 
-class ex02 {
+class ex02For {
     public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
 
@@ -18,11 +18,10 @@ class ex02 {
     }
 
     public static void contarRegressivo(int num){
-    int contador = 1;
 
-        while(contador <= num){
+        for(int i = 1; num >= i; num--){
             System.out.println(num);
-            num--;
+        
         }
         
 }
