@@ -4,65 +4,46 @@ class vetor {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        System.out.println("Digite o tamanho do vetor");
-            int vetor = in.nextInt();
-        
-            int [] numeros = new int [vetor];
-    
-        for (int i = 0; i < vetor; i++){
-            System.out.println("Digite o número");
-            numeros[i] = in.nextInt();
+        /*
+         * System.out.println("Digite o tamanho do vetor");
+         * int vetor = in.nextInt();
+         * 
+         * int [] numeros = new int [vetor];
+         * 
+         * for (int i = 0; i < vetor; i++){
+         * System.out.println("Digite o número");
+         * numeros[i] = in.nextInt();
+         * 
+         * }
+         * 
+         * System.out.println();
+         * 
+         * for (int num : numeros){
+         * 
+         * System.out.println(num);
+         * }
+         * 
+         * System.out.println();
+         */
 
-        }
+        int vetorTeste[] = { 3, 1, 2, 3, 8, 4, 5, 6, 7, 8, 3 };
+        int contador = 0;
+        int seq = 0;
+        int newVetor[] = {};
 
-        System.out.println();
+        for (int i = 1; i < 11; i++) {
 
-        for (int num : numeros){
-        
-            System.out.println(num);
-        }
+            if (vetorTeste[i - 1]+1 == vetorTeste[i]) {
+                seq++;
 
-        System.out.println();
-
-        
-        int num = numeros[0];
-        int array = 0;
-        int contador = 1;
-
-
-  
-
-            for (int i = 0; i < vetor; i++){
-
-               if(numeros[contador] - numeros[i] == 1){
-
-                    
-
-               } 
-
-                array = numeros[i];
-                int valor = array - num;
-                
-    
-                if (valor == 1){
-                    contador++;
-                }
-    
-                num = array;
             }
 
+            contador++;
+        }
 
-
-  
-
-       /* System.out.println();
-
-        for (int sequencia : seq){
-            System.out.println(sequencia);
-        }*/
-
+        System.out.println(seq);
 
         in.close();
-   
-}
+
+    }
 }
