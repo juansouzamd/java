@@ -16,14 +16,15 @@ class ex04 {
 
         int calculoSoma = somarParesAte(numero01, numero02);
 
-        System.out.printf("A soma dos números pares de %d a %d é %d%n",numero01,numero02,calculoSoma);
+        System.out.printf("A soma dos números pares de %d a %d é %d%n", numero01, numero02, calculoSoma);
 
         ler.close();
     }
-    public static int somarParesAte(int inicio, int fim){
+
+    public static int somarParesAte(int inicio, int fim) {
         int soma = 0;
-        for (int contador = inicio; contador <= fim; contador++){
-            if (contador % 2 == 0){
+        for (int contador = inicio; contador <= fim; contador++) {
+            if (contador % 2 == 0) {
                 soma = soma + contador;
             }
         }

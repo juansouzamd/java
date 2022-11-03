@@ -15,20 +15,21 @@ class ex08 {
 
         ler.close();
     }
-    public static String separar(String texto){
+
+    public static String separar(String texto) {
         String resultado = "";
-        
-        for (int contador = 0; contador < texto.length(); contador++){
+
+        for (int contador = 0; contador < texto.length(); contador++) {
             char letra = texto.charAt(contador);
 
-            if (letra == ' '){
-            } else if (contador == 0){
+            if (letra == ' ') {
+            } else if (contador == 0) {
                 resultado = resultado + letra;
             } else {
                 resultado = resultado + "-" + letra;
             }
-            
+
         }
-        return resultado;
+        return resultado.toUpperCase();
     }
 }

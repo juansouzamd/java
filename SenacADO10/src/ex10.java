@@ -15,18 +15,19 @@ class ex10 {
 
         ler.close();
     }
-    public static String palindromo(String texto){
+
+    public static String palindromo(String texto) {
         String resultado = "";
-        
-        for (int contador = texto.length()-1; contador >= 0; contador--){
+
+        for (int contador = texto.length() - 1; contador >= 0; contador--) {
             char letra = texto.charAt(contador);
-            
+
             resultado = resultado + letra;
         }
 
-            String verificar = "";
+        String verificar = "";
 
-        if (texto.equalsIgnoreCase(resultado)){
+        if (texto.equalsIgnoreCase(resultado)) {
             verificar = "É um palíndromo";
         } else {
             verificar = "Não é um palíndromo";

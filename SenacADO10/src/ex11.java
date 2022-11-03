@@ -9,11 +9,11 @@ class ex11 {
         System.out.println("Digite a posição desejada de fibonacci");
         int posicao = ler.nextInt();
 
-        System.out.println(); //pular linha
+        System.out.println(); // pular linha
 
         int calculoFibonacci = fibonacci(posicao);
 
-        System.out.printf("O valor na posição %d da sequência de fibonacci é %d",posicao,calculoFibonacci);
+        System.out.printf("O valor na posição %d da sequência de fibonacci é %d", posicao, calculoFibonacci);
 
         ler.close();
     }

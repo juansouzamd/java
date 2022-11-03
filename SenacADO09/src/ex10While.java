@@ -2,32 +2,31 @@ import java.util.*;
 
 class ex10While {
     public static void main(String[] args) {
-        Scanner in = new Scanner (System.in);
+        Scanner in = new Scanner(System.in);
 
-    System.out.println("===== Exercício 10 =====");
+        System.out.println("===== Exercício 10 =====");
 
-    System.out.println("Digite sua frase");
+        System.out.println("Digite sua frase");
         String frase = in.nextLine();
 
-    System.out.println(); //pular linha
+        System.out.println(); // pular linha
 
-    soletrar(frase);
+        soletrar(frase);
 
-    in.close();
+        in.close();
 
-}
+    }
 
-    public static void soletrar(String mensagem){
+    public static void soletrar(String mensagem) {
         int contador = 0;
         int letrasMenagem = mensagem.length();
 
-    while(contador < letrasMenagem){
+        while (contador < letrasMenagem) {
 
-        System.out.println(mensagem.charAt(contador));
+            System.out.println(mensagem.charAt(contador));
 
-        contador++;
-    }
-
+            contador++;
+        }
 
     }
 }

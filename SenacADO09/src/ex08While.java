@@ -2,41 +2,40 @@ import java.util.*;
 
 class ex08While {
     public static void main(String[] args) {
-        Scanner in = new Scanner (System.in);
+        Scanner in = new Scanner(System.in);
 
-    System.out.println("===== Exercício 8 =====");
+        System.out.println("===== Exercício 8 =====");
 
-    System.out.println("Digite a base do retângulo");
+        System.out.println("Digite a base do retângulo");
         int base = in.nextInt();
 
-    System.out.println("Digite a altura do retângulo");
+        System.out.println("Digite a altura do retângulo");
         int altura = in.nextInt();
 
-    System.out.println(); //pular linha
+        System.out.println(); // pular linha
 
-    retangulo(base, altura);
+        retangulo(base, altura);
 
-    in.close();
+        in.close();
 
     }
 
-    public static void retangulo(int baseRetangulo, int alturaRetangulo){
+    public static void retangulo(int base, int altura) {
         int contador01 = 1;
         int contador02 = 1;
         String asterisco = "* ";
 
-        while (contador01 <= alturaRetangulo){
+        while (contador01 <= altura) {
 
-            while(contador02 <= baseRetangulo){
+            while (contador02 <= base) {
                 System.out.print(asterisco);
                 contador02++;
             }
 
-         System.out.println();
-         contador01++;
-         contador02 = 1;
+            System.out.println();
+            contador01++;
+            contador02 = 1;
         }
 
-        
-}
+    }
 }

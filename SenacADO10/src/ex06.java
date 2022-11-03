@@ -12,31 +12,32 @@ class ex06 {
         System.out.println("Digite o número expoente");
         int numeroExpoente = ler.nextInt();
 
-        String resultadoFinal = "";
-        int valorFinal = 0;
+        System.out.println(); // pular linha
 
-        if (numeroBase < 0 || numeroExpoente < 0) {
-            resultadoFinal = "Calculo inválido";
-        } else {
-            valorFinal = potenciaN(numeroBase, numeroExpoente);
-            resultadoFinal = numeroBase + " elevado a " + numeroExpoente + " é " + valorFinal;
-        }
+        String resultado = potenciaN(numeroBase, numeroExpoente);
 
-        System.out.println(resultadoFinal);
+        System.out.println(resultado);
 
         ler.close();
     }
 
-    public static int potenciaN(int numero, int expoente) {
-        int resultado = numero;
+    public static String potenciaN(int numero, int expoente) {
+        String resultadoFinal = "";
+        int valor = numero;
 
-        if (expoente == 0) {
-            resultado = 1;
+        if (numero < 0 || expoente < 0) {
+            resultadoFinal = "Calculo inválido";
         } else {
-            for (int contador = numero; contador <= expoente; contador++) {
-                resultado = resultado * numero;
+            if (expoente == 0) {
+                valor = 1;
+                resultadoFinal = numero + " elevado a " + expoente + " é " + valor;
+            } else {
+                for (int contador = 2; contador <= expoente; contador++) {
+                    valor = valor * numero;
+                }
+                resultadoFinal = numero + " elevado a " + expoente + " é " + valor;
             }
         }
-        return resultado;
+        return resultadoFinal;
     }
 }

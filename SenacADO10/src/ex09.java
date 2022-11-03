@@ -15,12 +15,13 @@ class ex09 {
 
         ler.close();
     }
-    public static String inverter(String texto){
+
+    public static String inverter(String texto) {
         String resultado = "";
-        
-        for (int contador = texto.length()-1; contador >= 0; contador--){
+
+        for (int contador = texto.length() - 1; contador >= 0; contador--) {
             char letra = texto.charAt(contador);
-            
+
             resultado = resultado + letra;
         }
         return resultado;

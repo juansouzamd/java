@@ -23,19 +23,19 @@ class ex12 {
 
         if (numero == 0 || numero == 1) {
             resultado = "Não é um número primo";
-        }
-
-        for (int contador = 1; contador <= numero; contador++) {
-
-            if (numero % contador == 0) {
-                divisoes++;
-            }
-        }
-
-        if (divisoes == 2) {
-            resultado = "É um número primo";
         } else {
-            resultado = "Não é um número primo";
+            for (int contador = 1; contador <= numero; contador++) {
+
+                if (numero % contador == 0) {
+                    divisoes++;
+                }
+            }
+
+            if (divisoes == 2) {
+                resultado = "É um número primo";
+            } else {
+                resultado = "Não é um número primo";
+            }
         }
         return resultado;
     }

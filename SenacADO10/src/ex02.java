@@ -23,5 +23,4 @@ class ex02 {
         }
         return soma;
     }
-
 }

@@ -28,9 +28,18 @@ class vetor20 {
 
         int vetor[] = { 3, 1, 2, 3, 8, 4, 5, 6, 7, 8, 3};
         int contador = 0;
-        int sequencia[] = {};
+        int seq = 0;
 
-      System.out.println("teste");
+          for (int i = 1; i < 11; i++){
+            if (vetor[i] - vetor[contador] == 1){
+              seq++;
+            }
+            contador++;
+          }
+
+          
+
+          System.out.println(seq);
 
         in.close();
 
