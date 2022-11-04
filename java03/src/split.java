@@ -8,6 +8,5 @@ public class split {
         for (String vet : vetor){
             System.out.println(vet);
         }
-        
     }
 }
