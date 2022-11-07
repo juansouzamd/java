@@ -6,79 +6,71 @@ class ex02 {
 
         System.out.println("\nPrograma para adivinhar o número, você tem 10 tentativas");
 
-        int numero = sortearNumero();
+        int numSorteado = sortearNumero();
+        String jogada = "";
         char resposta;
 
         do {
 
-            System.out.println("\nO número já foi sorteado.\n");
+            for (int tentativa = 1; tentativa <= 10; tentativa++) {
 
-            ganhou(numero);
+                if (tentativa == 1){
+                    System.out.println("\nO número já foi sorteado\n");
+                }
 
-            System.out.println("\nDeseja jogar mais uma vez? (S ou N)");
+                System.out.println("Digite sua tentativa número " + tentativa + ":");
+                int numUsuario = ler.nextInt();
+
+                jogada = ganhou(numSorteado, numUsuario, tentativa);
+
+                if (jogada.equalsIgnoreCase("Parabéns você acertou")) {
+                    tentativa = 11;
+                }
+
+                System.out.println(jogada);
+
+                if (jogada.equalsIgnoreCase("Você perdeu!!")) {
+                    System.out.println("O número sorteado era " + numSorteado);
+                }
+
+            }
+
+            System.out.println("\nDeseja jogar novamente? (S ou N)");
             resposta = ler.next().toUpperCase().charAt(0);
 
-           while (resposta != 'N' && resposta != 'S'){
-                System.out.println("Resposta inválida, digite novamente:");
+            while (resposta != 'S' && resposta != 'N') {
+                System.out.println("\nResposata inválida digite novamente:");
                 resposta = ler.next().toUpperCase().charAt(0);
             }
 
-        } while(resposta == 'S');
-        
-        
+        } while (resposta == 'S');
     }
 
     public static int sortearNumero() {
         Random rdn = new Random();
-        int n = rdn.nextInt( 1000);
+        int n = rdn.nextInt(1000);
         return n;
     }
 
-    public static void ganhou(int numeroSorteado) {
-        Scanner ler = new Scanner(System.in);
+    public static String ganhou(int sorteado, int numUsuario, int tentativa) {
+        String resposta = "";
 
-        for (int i = 1; i <= 10; i++) {
+        if (numUsuario == sorteado) {
+            resposta = "Parabéns você acertou";
 
-            System.out.println("Digite sua tentativa número " + i + ":");
-            int tentativa = ler.nextInt();
+        } else if (numUsuario < sorteado) {
+            resposta = "O número é maior";
 
-            if (tentativa == numeroSorteado) {
-                System.out.println("Parabéns você acertou");
-                i = 11;
-            } else if (tentativa < numeroSorteado) {
-                System.out.println("O número é maior");
-            } else {
-                System.out.println("O número é menor");
-            }
+        } else {
+            resposta = "O número é menor";
 
-            if (i == 10 && tentativa != numeroSorteado){
-                System.out.println("Você perdeu!!");
-            }
         }
+
+        if (tentativa == 10 && numUsuario != sorteado) {
+            resposta = "Você perdeu!!";
+        }
+
+        return resposta;
     }
 
 }
-
-
-
-/* int tentativa = 0;
-
-        for (int i = 1; i <= 10; i++) {
-
-            System.out.println("Digite sua tentativa número " + i + ":");
-            tentativa = ler.nextInt();
-
-            if (tentativa == numero) {
-                System.out.println("Parabéns você acertou");
-                i = 11;
-            } else if (tentativa < numero) {
-                System.out.println("O número é maior");
-            } else {
-                System.out.println("O número é menor");
-            }
-
-            if (i == 10 && tentativa != numero){
-                System.out.println("Você perdeu!!");
-            }
-        }
- */

@@ -1,6 +1,6 @@
 import java.util.*;
 
-class VetorDesafio {
+class Vetor01 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
@@ -30,15 +30,16 @@ class VetorDesafio {
 
         System.out.println(quebrasDeSequencia);
 
+
+
+
+
+
+
+
+
+
         in.close();
-
-        // int cont = 0;
-        // int vetorTeste[] = new int [10];
-
-        // for (int i = 1; i < tamanhoVetor; i++){
-        //    if (vetorInicial[i] )
-        // }
-
     }
 
     public static int tamanhoSequencias(int tamanhoVetor, int[] array) {
@@ -67,7 +68,6 @@ class VetorDesafio {
         int vetorArmazenar[] = new int[tamanhoSeq];
         int newContador = 0;
         int posicao = 0;
-        int quebras = 0;
 
         for (int i = 1; i < tamanhoVetor; i++) {
             if (array[i] - array[newContador] == 1) {
@@ -81,14 +81,12 @@ class VetorDesafio {
 
                         vetorArmazenar[posicao] = array[newContador + 1];
                         posicao++;
-                        quebras++;
                     }
 
                 } else if (array[newContador] - array[i] == -1) {
 
                     vetorArmazenar[posicao] = array[newContador + 1];
                     posicao++;
-                    quebras++;
                 }
             }
             newContador++;

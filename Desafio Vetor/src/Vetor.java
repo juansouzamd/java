@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Vetor20 {
+class Vetor {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
