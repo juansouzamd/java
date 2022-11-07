@@ -1,4 +1,4 @@
-public class graus {
+public class Graus {
     public static void main(String[] args) {
 
     double f, c;

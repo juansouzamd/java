@@ -1,6 +1,6 @@
 import java.util.*;
 
-class mega {
+class Mega {
   public static void main(String[] args){
   Scanner entrada = new Scanner (System.in);
   Random aleatorio = new Random();

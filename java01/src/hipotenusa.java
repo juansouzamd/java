@@ -1,6 +1,6 @@
 import java.util.*;
 
-class hipotenusa {
+class Hipotenusa {
     public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
 

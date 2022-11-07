@@ -1,6 +1,6 @@
 import java.util.*;
 
- class ano {
+ class Ano {
   public static void main(String[] args) {
   Scanner in = new Scanner (System.in);
   
@@ -18,6 +18,7 @@ import java.util.*;
   System.out.println(ano+" ano(s)");
   System.out.println(meses+" mes(es)");
   System.out.println(dias+" dia(s)");
-    
+
+  in.close();  
   }
 }

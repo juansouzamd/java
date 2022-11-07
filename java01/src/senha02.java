@@ -1,6 +1,6 @@
 import java.util.*;
 
-class senha02 {
+class Senha02 {
   public static void main (String[] args){
     Scanner in = new Scanner (System.in);
     

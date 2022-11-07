@@ -1,6 +1,6 @@
 import java.util.*;
 
-class ex02 {
+class ex02Void {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
 
@@ -30,7 +30,7 @@ class ex02 {
 
     public static int sortearNumero() {
         Random rdn = new Random();
-        int n = rdn.nextInt( 1000);
+        int n = rdn.nextInt(1000);
         return n;
     }
 

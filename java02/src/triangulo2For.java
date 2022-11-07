@@ -1,4 +1,4 @@
-public class triangulo2For {
+public class Triangulo2For {
     public static void main(String[] args) {
         
         int x = 20;

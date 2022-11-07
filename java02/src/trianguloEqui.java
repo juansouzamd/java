@@ -1,4 +1,4 @@
-public class trianguloEqui {
+public class TrianguloEqui {
     public static void main(String[] args) {
         
         int x = 10;

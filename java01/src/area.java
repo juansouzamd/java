@@ -1,6 +1,6 @@
 import java.util.*;
 
- class area {
+ class Area {
   public static void main(String[] args) {
   Scanner in = new Scanner (System.in);
   
@@ -21,5 +21,6 @@ import java.util.*;
   System.out.printf("QUADRADO: %.3f%n",areaQaudrado);
   System.out.printf("RETANGULO: %.3f%n",areaRetangulo);
     
+  in.close();
   }
 }

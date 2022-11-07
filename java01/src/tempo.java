@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class tempo {
+public class Tempo {
 
 	public static void main(String[] args) {
 

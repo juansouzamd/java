@@ -1,6 +1,6 @@
 import java.util.*;
 
-class abnt {
+class Abnt {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
     
@@ -31,5 +31,6 @@ class abnt {
 
     System.out.println(ultimoNome+ ", "+primeiraLetraNome+ ". "+ primeiraLetraSobrenome+ ". "+obra+ ". "+cidade+ ": "+editora+ ", "+anoLancamento+ ".");
 
+    in.close();
     }
 }

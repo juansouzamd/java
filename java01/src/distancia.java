@@ -1,6 +1,6 @@
 import java.util.*;
 
- class distancia {
+ class Distancia {
   public static void main(String[] args) {
   Scanner in = new Scanner (System.in);
   

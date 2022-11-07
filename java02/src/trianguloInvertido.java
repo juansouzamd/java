@@ -1,4 +1,4 @@
-public class trianguloInvertido {
+public class TrianguloInvertido {
     public static void main(String[] args) {
         
         int x = 10;

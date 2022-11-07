@@ -1,6 +1,6 @@
 import java.util.*;
 
-class cifraDeCesar {
+class CifraDeCesar {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 

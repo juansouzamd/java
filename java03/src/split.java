@@ -1,4 +1,4 @@
-public class split {
+public class Split {
     public static void main(String[] args) {
         
         String texto = "uva laranja acerola abacate pitanga melancia";

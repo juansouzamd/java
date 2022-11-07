@@ -1,6 +1,6 @@
 import java.util.*;
 
-class anoBissexto {
+class AnoBissexto {
     public static void main(String[] args){
         Scanner in= new Scanner(System.in);
 
@@ -13,5 +13,6 @@ class anoBissexto {
 
     System.out.println("É bissexto? "+bissexto);
 
+    in.close();
     }
 }

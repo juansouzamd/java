@@ -1,6 +1,6 @@
 import java.util.*;
 
-class vetor20 {
+class Vetor20 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
@@ -33,11 +33,39 @@ class vetor20 {
           for (int i = 1; i < 11; i++){
             if (vetor[i] - vetor[contador] == 1){
               seq++;
+
+              if (vetor[i+1] - vetor[contador+1] != 1){
+                seq++;
+              }
             }
             contador++;
           }
 
-          
+          int vetorArmazenar[] = new int [seq];
+          int newContador = 0;
+          int j = 0;
+
+          for (int i = 1; i < 11; i++){
+            if (vetor[i] - vetor[newContador] == 1){
+    
+              vetorArmazenar[j] = vetor[newContador];
+              j++;
+
+              if (vetor[i+1] - vetor[newContador+1] != 1){
+                
+                vetorArmazenar[j] = vetor[newContador+1];
+                j++;
+              }
+            }
+            
+            newContador++;
+          }
+
+          for (int vet : vetorArmazenar){
+            System.out.println(vet);
+          }
+
+          System.out.println();
 
           System.out.println(seq);
 

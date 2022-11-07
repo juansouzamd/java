@@ -85,7 +85,7 @@ class ex01 {
                     break;
 
                 default:
-                    System.out.println("\nOpcao inválida.");
+                    System.out.println("\nOpção inválida.");
                     break;
             }
 

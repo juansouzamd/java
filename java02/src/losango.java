@@ -1,4 +1,4 @@
-public class losango {
+public class Losango {
     public static void main(String[] args) {
         
         int x = 10;

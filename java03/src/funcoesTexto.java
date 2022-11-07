@@ -1,4 +1,4 @@
-class funcoesTexto {
+class FuncoesTexto {
     public static void main(String[] args) {
         
         String original = "abcde FGHIJ ABC abc DEFG ";

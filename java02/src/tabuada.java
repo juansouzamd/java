@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class tabuada {
+public class Tabuada {
     public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
 

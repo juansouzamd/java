@@ -1,6 +1,6 @@
 import java.util.*;
 
-class equacao2Grau {
+class Equacao2Grau {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 

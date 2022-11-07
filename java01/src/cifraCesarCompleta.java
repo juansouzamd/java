@@ -1,6 +1,6 @@
 import java.util.*;
 
-class cifraCesarCompleta {
+class CifraCesarCompleta {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         boolean continua = true;

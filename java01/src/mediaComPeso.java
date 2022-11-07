@@ -1,6 +1,6 @@
 import java.util.*;
 
- class mediaComPeso {
+ class MediaComPeso {
   public static void main(String[] args) {
   Scanner in = new Scanner (System.in);
   

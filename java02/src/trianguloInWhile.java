@@ -1,4 +1,4 @@
-public class trianguloInWhile {
+public class TrianguloInWhile {
     public static void main(String[] args) {
         
         int x = 10;

@@ -1,4 +1,4 @@
-public class retanguloFor {
+public class RetanguloFor {
     public static void main(String[] args) {
         
         int x = 10;
