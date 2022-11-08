@@ -1,6 +1,6 @@
 import java.util.*;
 
-class ex11Completo {
+class Ex11Completo {
     public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
 

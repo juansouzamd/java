@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch ex04",
+            "request": "launch",
+            "mainClass": "ex04",
+            "projectName": "java_ba28b038"
+        },
+        {
+            "type": "java",
             "name": "Launch Vetor04",
             "request": "launch",
             "mainClass": "Vetor04",

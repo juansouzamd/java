@@ -1,6 +1,6 @@
 import java.util.*;
 
-class ex08 {
+class Ex08 {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
 

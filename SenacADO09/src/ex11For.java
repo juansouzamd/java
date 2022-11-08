@@ -1,6 +1,6 @@
 import java.util.*;
 
-class ex11For {
+class Ex11For {
     public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
 

@@ -1,6 +1,6 @@
 import java.util.*;
 
-class ex04For {
+class Ex04For {
     public static void main(String[] args) {
         Scanner in = new Scanner (System.in);
 

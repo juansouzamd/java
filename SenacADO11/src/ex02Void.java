@@ -1,6 +1,6 @@
 import java.util.*;
 
-class ex02Void {
+class Ex02Void {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
 

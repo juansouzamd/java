@@ -1,3 +1,3 @@
-public class ex03 {
+public class Ex03 {
     
 }

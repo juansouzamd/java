@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Ex04 {
+class ExBoolean {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
 
