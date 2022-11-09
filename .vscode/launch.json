@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch JogoPerguntados03",
+            "request": "launch",
+            "mainClass": "JogoPerguntados03",
+            "projectName": "java_ba28b038"
+        },
+        {
+            "type": "java",
+            "name": "Launch JogoPerguntas02",
+            "request": "launch",
+            "mainClass": "JogoPerguntas02",
+            "projectName": "java_ba28b038"
+        },
+        {
+            "type": "java",
+            "name": "Launch JogoPerguntas01",
+            "request": "launch",
+            "mainClass": "JogoPerguntas01",
+            "projectName": "java_ba28b038"
+        },
+        {
+            "type": "java",
             "name": "Launch JogoPerguntas",
             "request": "launch",
             "mainClass": "JogoPerguntas",

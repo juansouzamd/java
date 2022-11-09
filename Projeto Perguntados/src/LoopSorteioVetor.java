@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Testar {
+public class LoopSorteioVetor {
     public static void main(String[] args) {
         Random rdn = new Random();
 
