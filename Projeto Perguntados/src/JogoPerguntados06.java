@@ -5,7 +5,7 @@ public class JogoPerguntados06 {
         Scanner ler = new Scanner(System.in);
         Random rdn = new Random();
 
-        int pontuacao = 0, repeticao = 0, contador = 0, reinicio = 0, contadorRespostasCertas = 0, vidas = 4;
+        int pontuacao = 0, repeticao = 0, contador = 0, reinicio = 0, contadorRespostasCertas = 0, vidas = 4, numeroQuestao = 1;
         char respostaUsuario, respostaJogarNovamente;
         int vetorNumerosSorteados[] = new int[25];
 
@@ -40,6 +40,7 @@ public class JogoPerguntados06 {
             String respostaPerguntaSorteada = respostas(numeroSorteado);
             char gabarito = respostaPerguntaSorteada.charAt(0);
 
+            System.out.printf("========= Pergunta Número: %d =========%n",numeroQuestao);
             System.out.println(perguntaSorteada);
 
             System.out.println("Digite a alternativa correta:");
@@ -56,8 +57,6 @@ public class JogoPerguntados06 {
                 vidas--;
             } else if (respostaUsuario == gabarito) {
                 
-                contadorRespostasCertas++;
-
                 if (numeroSorteado == 4 || numeroSorteado == 9 || numeroSorteado == 14 || numeroSorteado == 19 || numeroSorteado == 24){
                     pontuacao += 30;
                 } else if (numeroSorteado == 3 || numeroSorteado == 8 || numeroSorteado == 13 || numeroSorteado == 18 || numeroSorteado == 23){
@@ -65,7 +64,11 @@ public class JogoPerguntados06 {
                 } else {
                     pontuacao += 10;
                 }
+
+                contadorRespostasCertas++;
             }
+
+            numeroQuestao++;
 
             String classificacao = ranking(pontuacao);
 
@@ -97,6 +100,7 @@ public class JogoPerguntados06 {
                     pontuacao = 0;
                     vidas = 4;
                     contador = 0;
+                    numeroQuestao = 1;
                     for (int i = 0; i < 25; i++) {
                         vetorNumerosSorteados[i] = -1;
                     }
@@ -334,9 +338,9 @@ public class JogoPerguntados06 {
 
         if (rodada == 0 && reinicio == 0) {
             System.out.println("\nBem vindo ao jogo Perguntados\n");
-            System.out.println("Escolha as alternativas corretas e descubra sua classificação!!");
+            System.out.println("Escolha as alternativas corretas e descubra sua classificação!!\n");
         } else {
-            System.out.println("\n======== Jogo Perguntados ========");
+            System.out.println("\n========== Jogo Perguntados ==========");
         }
 
     }
@@ -370,26 +374,23 @@ public class JogoPerguntados06 {
     public static void ultimaRodada(int rodada, int contadorRespostasCertas, int pontuacao, String classificacao) {
 
         if (rodada == 24) {
-            if (contadorRespostasCertas == 24) {
-                System.out.println("Você acertou todas as perguntas e atingiu a pontuação máxima que foi de " + pontuacao + " meus parabéns.");
+
+                System.out.println("Você fez " + pontuacao + " pontos.");
                 System.out.println("Sua classificação foi, "+classificacao+".\n");
-            } else {
-                System.out.println("Sua pontuação foi de " + pontuacao + " pontos.");
-                System.out.println("Sua classificação foi, "+classificacao+".\n");
-            }
+            
         }
     }
 
     public static String ranking(int pontuacao){
         String resposta = "";
 
-        if (pontuacao >= 100){
+        if (pontuacao <= 150 && pontuacao >= 100){
             resposta = "Nível Bronze";
-        } else if (pontuacao >= 190){
+        } else if (pontuacao <= 210){
             resposta = "Nível Prata";
-        } else if (pontuacao >= 280){
+        } else if (pontuacao <= 290){
             resposta = "Nível Ouro";
-        } else if (pontuacao >= 350){
+        } else if (pontuacao <= 350){
             resposta = "Nível Diamante";
         } else {
             resposta ="Nível Latão";
