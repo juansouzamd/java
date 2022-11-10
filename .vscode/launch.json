@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch JogoPerguntados06",
+            "request": "launch",
+            "mainClass": "JogoPerguntados06",
+            "projectName": "java_ba28b038"
+        },
+        {
+            "type": "java",
             "name": "Launch JogoPerguntados05",
             "request": "launch",
             "mainClass": "JogoPerguntados05",

@@ -8,7 +8,7 @@ public class JogoPerguntados06 {
         int pontuacao = 0, repeticao = 0, contador = 0, reinicio = 0, contadorRespostasCertas = 0, vidas = 4;
         char respostaUsuario, respostaJogarNovamente;
         int vetorNumerosSorteados[] = new int[25];
-        
+
         for (int i = 0; i < 25; i++) {
             vetorNumerosSorteados[i] = -1;
         }
@@ -34,10 +34,6 @@ public class JogoPerguntados06 {
             vetorNumerosSorteados[contador] = numeroSorteado;
             contador++;
 
-            for (int vet : vetorNumerosSorteados){
-                System.out.println(vet);
-            }
-
             cabecalho(rodada, reinicio);
 
             String perguntaSorteada = todasPerguntas(numeroSorteado);
@@ -59,17 +55,27 @@ public class JogoPerguntados06 {
             if (respostaUsuario != gabarito) {
                 vidas--;
             } else if (respostaUsuario == gabarito) {
-                pontuacao += 10;
+                
                 contadorRespostasCertas++;
+
+                if (numeroSorteado == 4 || numeroSorteado == 9 || numeroSorteado == 14 || numeroSorteado == 19 || numeroSorteado == 24){
+                    pontuacao += 30;
+                } else if (numeroSorteado == 3 || numeroSorteado == 8 || numeroSorteado == 13 || numeroSorteado == 18 || numeroSorteado == 23){
+                    pontuacao += 20;
+                } else {
+                    pontuacao += 10;
+                }
             }
+
+            String classificacao = ranking(pontuacao);
 
             corrigeResposta(respostaUsuario, gabarito, vidas, pontuacao);
 
             System.out.println();
 
-            fimVidas(vidas, pontuacao);
+            fimVidas(vidas, pontuacao, classificacao);
 
-            ultimaRodada(rodada, contadorRespostasCertas, pontuacao);
+            ultimaRodada(rodada, contadorRespostasCertas, pontuacao, classificacao);
 
             if (vidas == 0 || rodada == 24) {
 
@@ -83,7 +89,7 @@ public class JogoPerguntados06 {
 
                 if (respostaJogarNovamente == 'N') {
                     rodada = 30;
-                    System.out.println("\nObrigado por jogar nosso jogo :)");
+                    System.out.println("\nObrigado por jogar nosso jogo :)\n");
                 } else {
                     reinicio = 1;
                     rodada = -1;
@@ -107,7 +113,7 @@ public class JogoPerguntados06 {
 
         String perguntasVetor[] = {
 
-                "\n(Tema: ciências) Valendo 10 Pontos:\n" +
+                "\nTema: Ciências, Valendo 10 Pontos:\n" +
                         "Qual o metal cujo símbolo químico é o Au?\n" +
                         "A) Cobre\n" +
                         "B) Prata\n" +
@@ -115,7 +121,7 @@ public class JogoPerguntados06 {
                         "D) Ouro\n" + // reposta correta
                         "E) Manganês\n",
 
-                "\n(Tema: ciências) Valendo 10 Pontos:\n" +
+                "\nTema: Ciências, Valendo 10 Pontos:\n" +
                         "Quem foi o primeiro homem a pisar na Lua? Em que ano aconteceu?\n" +
                         "A) Yuri Gagarin, em 1961\n" +
                         "B) Buzz Aldrin, em 1969\n" +
@@ -123,7 +129,7 @@ public class JogoPerguntados06 {
                         "D) Charles Duke, em 1971\n" +
                         "E) Neil Armstrong, em 1969\n", // reposta correta
 
-                "\n(Tema: ciências) Valendo 10 Pontos:\n" +
+                "\nTema: Ciências, Valendo 10 Pontos:\n" +
                         "Quanto tempo a luz do Sol demora para chegar à Terra?\n" +
                         "A) 12 minutos\n" +
                         "B) 1 dia\n" +
@@ -131,7 +137,7 @@ public class JogoPerguntados06 {
                         "D) 8 minutos\n" + // reposta correta
                         "E) 12 segundos\n",
 
-                "\n(Tema: ciências) Valendo 10 Pontos:\n" +
+                "\nTema: Ciências, Valendo 20 Pontos:\n" +
                         "As pessoas de qual tipo sanguíneo são consideradas doadores universais\n" +
                         "A) Tipo A\n" +
                         "B) Tipo B\n" +
@@ -139,7 +145,7 @@ public class JogoPerguntados06 {
                         "D) Tipo AB\n" +
                         "E) Tipo AB\n",
 
-                "\n(Tema: ciências) Valendo 10 Pontos:\n" +
+                "\nTema: Ciências, Valendo 30 Pontos:\n" +
                         "Quais dos órgãos abaixo pertencem ao sistema respiratório?\n" +
                         "A) Laringe e traqueia\n" + // reposta correta
                         "B) Pulmões e faringe\n" +
@@ -147,7 +153,7 @@ public class JogoPerguntados06 {
                         "D) Tireoide e hipófise\n" +
                         "E) Pâncreas e vasos sanguíneos\n",
 
-                "\n(Tema: Geografia) Valendo 10 Pontos:\n" +
+                "\nTema: Geografia, Valendo 10 Pontos:\n" +
                         "Qual é a capital do Acre?\n" +
                         "A) Rio Branco\n" + // reposta correta
                         "B) Amazonia\n" +
@@ -155,7 +161,7 @@ public class JogoPerguntados06 {
                         "D) Rondonia\n" +
                         "E) Macapá\n",
 
-                "\n(Tema: Geografia) Valendo 10 Pontos:\n" +
+                "\nTema: Geografia, Valendo 10 Pontos:\n" +
                         "Qual desses Países não é Europeu?\n" +
                         "A) Macedonia\n" +
                         "B) Espanha\n" +
@@ -163,7 +169,7 @@ public class JogoPerguntados06 {
                         "D) Casaquistão\n" + // reposta correta
                         "E) Polonia\n",
 
-                "\n(Tema: Geografia) Valendo 10 Pontos:\n" +
+                "\nTema: Geografia, Valendo 10 Pontos:\n" +
                         "Em que continente está localizado o Catar?\n" +
                         "A) África\n" +
                         "B) Ásia\n" + // reposta correta
@@ -171,7 +177,7 @@ public class JogoPerguntados06 {
                         "D) América do Sul\n" +
                         "E) América Central\n",
 
-                "\n(Tema: Geografia) Valendo 10 Pontos:\n" +
+                "\nTema: Geografia, Valendo 20 Pontos:\n" +
                         "Qual o maior país do mundo?\n" +
                         "A) China\n" +
                         "B) Brasil\n" +
@@ -179,7 +185,7 @@ public class JogoPerguntados06 {
                         "D) Estados Unidos\n" +
                         "E) Rússia\n", // reposta correta
 
-                "\n(Tema: Geografia) Valendo 10 Pontos:\n" +
+                "\nTema: Geografia, Valendo 30 Pontos:\n" +
                         "Qual o rio mais longo mundo?\n" +
                         "A) Rio Nilo\n" + // reposta correta
                         "B) Rio Amazonas\n" +
@@ -187,7 +193,7 @@ public class JogoPerguntados06 {
                         "D) Rio Paraná\n" +
                         "E) Rio Congo\n",
 
-                "\n(Tema: Matemática) Valendo 10 Pontos:\n" +
+                "\nTema: Matemática, Valendo 10 Pontos:\n" +
                         "Um ângulo de 90º é um ângulo?\n" +
                         "A) Reto\n" + // reposta correta
                         "B) Obtuso\n" +
@@ -195,7 +201,7 @@ public class JogoPerguntados06 {
                         "D) Raso\n" +
                         "E) Côncavo\n",
 
-                "\n(Tema: Matemática) Valendo 10 Pontos:\n" +
+                "\nTema: Matemática, Valendo 10 Pontos:\n" +
                         "Quantos segundos há em duas horas?\n" +
                         "A) 2800\n" +
                         "B) 3600\n" +
@@ -203,7 +209,7 @@ public class JogoPerguntados06 {
                         "D) 6900\n" +
                         "E) 7200\n", // reposta correta
 
-                "\n(Tema: Matemática) Valendo 10 Pontos:\n" +
+                "\nTema: Matemática, Valendo 10 Pontos:\n" +
                         "Quantos centímetros existem em 5 metros?\n" +
                         "A) 50 cm\n" +
                         "B) 500 cm\n" + // reposta correta
@@ -211,7 +217,7 @@ public class JogoPerguntados06 {
                         "D) 0,5 cm\n" +
                         "E) 0,05 cm\n",
 
-                "\n(Tema: Matemática) Valendo 10 Pontos:\n" +
+                "\nTema: Matemática, Valendo 20 Pontos:\n" +
                         "Qual o maior número primo compreendido entre 30 e 40?\n" +
                         "A) 33\n" +
                         "B) 35\n" +
@@ -219,7 +225,7 @@ public class JogoPerguntados06 {
                         "D) 38\n" +
                         "E) 39\n",
 
-                "\n(Tema: Matemática) Valendo 10 Pontos:\n" +
+                "\nTema: Matemática, Valendo 30 Pontos:\n" +
                         "Um cubo possui 4 centímetros de altura, 2 centímetros de largura e 5 centímetros de comprimento. Qual é o volume dessa figura?\n"
                         +
                         "A) 8 centímetros cúbicos\n" +
@@ -228,7 +234,7 @@ public class JogoPerguntados06 {
                         "D) 40 centímetros cúbicos\n" + // reposta correta
                         "E) 40 metros quadrados\n",
 
-                "\n(Tema: Esportes) Valendo 10 Pontos:\n" +
+                "\nTema: Esportes, Valendo 10 Pontos:\n" +
                         "Quando foi a primeira copa do mundo?\n" +
                         "A) 1950\n" +
                         "B) 1900\n" +
@@ -236,7 +242,7 @@ public class JogoPerguntados06 {
                         "D) 1934\n" +
                         "E) 1926\n",
 
-                "\n(Tema: Esportes) Valendo 10 Pontos:\n" +
+                "\nTema: Esportes, Valendo 10 Pontos:\n" +
                         "A cada quantos anos são realizados os Jogos Olímpicos?\n" +
                         "A) 2 anos\n" +
                         "B) 3 anos\n" +
@@ -244,7 +250,7 @@ public class JogoPerguntados06 {
                         "D) 5 anos\n" +
                         "E) 6 anos\n",
 
-                "\n(Tema: Esportes) Valendo 10 Pontos:\n" +
+                "\nTema: Esportes, Valendo 10 Pontos:\n" +
                         "Quanto tempo dura uma partida de futebol completa?\n" +
                         "A) 30 minutos\n" +
                         "B) 45 minutos\n" +
@@ -252,7 +258,7 @@ public class JogoPerguntados06 {
                         "D) 60 minutos\n" +
                         "E) 90 minutos\n", // reposta correta
 
-                "\n(Tema: Esportes) Valendo 10 Pontos:\n" +
+                "\nTema: Esportes, Valendo 20 Pontos:\n" +
                         "Em que cidade está localizado o estádio popularmente conhecido como La Bombonera?\n" +
                         "A) Rio de Janeiro\n" +
                         "B) Buenos Aires\n" + // reposta correta
@@ -260,7 +266,7 @@ public class JogoPerguntados06 {
                         "D) Madri\n" +
                         "E) São paulo\n",
 
-                "\n(Tema: Esportes) Valendo 10 Pontos:\n" +
+                "\nTema: Esportes, Valendo 30 Pontos:\n" +
                         "Quem ganhou a Copa do Mundo de 2010?\n" +
                         "A) Brasil\n" +
                         "B) Argentina\n" +
@@ -268,7 +274,7 @@ public class JogoPerguntados06 {
                         "D) Espanha\n" + // reposta correta
                         "E) França\n",
 
-                "\n(Tema: Conhecimentos Gerais) Valendo 10 Pontos:\n" +
+                "\nTema: Conhecimentos Gerais, Valendo 10 Pontos:\n" +
                         "Qual é o substantivo usado para se referir a um grupo de lobos?\n" +
                         "A) Alcateia\n" + // reposta correta
                         "B) Rebanho\n" +
@@ -276,7 +282,7 @@ public class JogoPerguntados06 {
                         "D) Matilha\n" +
                         "E) Lobos\n",
 
-                "\n(Tema: Conhecimentos Gerais) Valendo 10 Pontos:\n" +
+                "\nTema: Conhecimentos Gerais, Valendo 10 Pontos:\n" +
                         "Na mitologia grega, Zeus era filho de quem?\n" +
                         "A) Apolo\n" +
                         "B) Thor\n" +
@@ -284,7 +290,7 @@ public class JogoPerguntados06 {
                         "D) Cronos\n" + // reposta correta
                         "E) Poseidon\n",
 
-                "\n(Tema: Conhecimentos Gerais) Valendo 10 Pontos:\n" +
+                "\nTema: Conhecimentos Gerais, Valendo 10 Pontos:\n" +
                         "Qual é o nome do maior osso do corpo humano?\n" +
                         "A) Fíbula\n" +
                         "B) Úmero\n" +
@@ -292,7 +298,7 @@ public class JogoPerguntados06 {
                         "D) Rádio\n" +
                         "E) Tíbia\n",
 
-                "\n(Tema: Conhecimentos Gerais) Valendo 10 Pontos:\n" +
+                "\nTema: Conhecimentos Gerais, Valendo 20 Pontos:\n" +
                         "Onde se localiza Machu Picchu?\n" +
                         "A) Colômbia\n" +
                         "B) China\n" +
@@ -300,7 +306,7 @@ public class JogoPerguntados06 {
                         "D) Índia\n" +
                         "E) Peru\n", // reposta correta
 
-                "\n(Tema: Conhecimentos Gerais) Valendo 10 Pontos:\n" +
+                "\nTema: Conhecimentos Gerais, Valendo 30 Pontos:\n" +
                         "Quem inventou a lâmpada?\n" +
                         "A) Graham Bell\n" +
                         "B) Thomas Edison\n" + // reposta correta
@@ -317,8 +323,7 @@ public class JogoPerguntados06 {
 
     public static String respostas(int numeroSorteado) {
 
-        String respostasPerguntas[] = { "D", "E", "D", "C", "A", "A", "D", "B", "E", "A", "A", "E", "B", "C", "D", "C",
-                "C", "E", "B", "D", "A", "D", "C", "E", "B" };
+        String respostasPerguntas[] = { "D", "E", "D", "C", "A", "A", "D", "B", "E", "A", "A", "E", "B", "C", "D", "C", "C", "E", "B", "D", "A", "D", "C", "E", "B" };
 
         String resposta = respostasPerguntas[numeroSorteado];
 
@@ -329,7 +334,7 @@ public class JogoPerguntados06 {
 
         if (rodada == 0 && reinicio == 0) {
             System.out.println("\nBem vindo ao jogo Perguntados\n");
-            System.out.println("Escolha as alternativas corretas e descubra sua classificação!!\n");
+            System.out.println("Escolha as alternativas corretas e descubra sua classificação!!");
         } else {
             System.out.println("\n======== Jogo Perguntados ========");
         }
@@ -352,24 +357,43 @@ public class JogoPerguntados06 {
 
     }
 
-    public static void fimVidas(int vidas, int pontuacao) {
+    public static void fimVidas(int vidas, int pontuacao, String classificacao) {
 
         if (vidas == 0) {
             System.out.println("Infelizmente acabaram suas vidas.");
-            System.out.println("Você fez " + pontuacao + " pontos.\n");
+            System.out.println("Você fez " + pontuacao + " pontos.");
+            System.out.println("Sua classificação foi, "+classificacao+".\n");
         }
 
     }
 
-    public static void ultimaRodada(int rodada, int contadorRespostasCertas, int pontuacao) {
+    public static void ultimaRodada(int rodada, int contadorRespostasCertas, int pontuacao, String classificacao) {
 
         if (rodada == 24) {
             if (contadorRespostasCertas == 24) {
-                System.out.println("Você acertou todas as perguntas e atingiu a pontuação máxima que foi de "
-                        + pontuacao + " meus parabéns.");
+                System.out.println("Você acertou todas as perguntas e atingiu a pontuação máxima que foi de " + pontuacao + " meus parabéns.");
+                System.out.println("Sua classificação foi, "+classificacao+".\n");
             } else {
                 System.out.println("Sua pontuação foi de " + pontuacao + " pontos.");
+                System.out.println("Sua classificação foi, "+classificacao+".\n");
             }
         }
+    }
+
+    public static String ranking(int pontuacao){
+        String resposta = "";
+
+        if (pontuacao >= 100){
+            resposta = "Nível Bronze";
+        } else if (pontuacao >= 190){
+            resposta = "Nível Prata";
+        } else if (pontuacao >= 280){
+            resposta = "Nível Ouro";
+        } else if (pontuacao >= 350){
+            resposta = "Nível Diamante";
+        } else {
+            resposta ="Nível Latão";
+        }
+        return resposta;
     }
 }
