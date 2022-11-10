@@ -1,23 +1,18 @@
 import java.util.*;
 
-public class JogoPerguntados05 {
+public class JogoPerguntados06 {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
         Random rdn = new Random();
 
-        int pontuacao = 0;
-        int vidas = 4;
-        int repeticao = 0;
-        int contador = 0;
-        int reinicio = 0;
-        int contadorRespostasCertas = 0;
+        int pontuacao = 0, repeticao = 0, contador = 0, reinicio = 0, contadorRespostasCertas = 0, vidas = 4;
         char respostaUsuario, respostaJogarNovamente;
         int vetorNumerosSorteados[] = new int[25];
-
+        
         for (int i = 0; i < 25; i++) {
             vetorNumerosSorteados[i] = -1;
         }
-        ;
+
 
         for (int rodada = 0; rodada < 25; rodada++) {
 
