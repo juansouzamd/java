@@ -1,42 +1,74 @@
 import java.util.*;
 
-class Ex04 {
+public class Ex04 {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
+        mostra("===== Exercício 4 =====");
+        mostra("Quantas palavras você quer digitar?");
+        int totalPalavras = ler.nextInt();
+        int acertos = 0;
 
-        System.out.println("===== Exercício 12 =====");
+        long inicio = new Date().getTime();
 
-        System.out.println("Digite seu número");
-        int numero = ler.nextInt();
+        for (int cont = 1; cont <= totalPalavras; cont++) {
 
-        boolean numeroPrimo = ehPrimo(numero);
+            String palavra = gerarPalavra();
+            mostra(palavra);
+            mostra("Tente digitar: ");
+            String palavraDigitada = ler.next();
+            boolean acerto = acertou(palavra, palavraDigitada);
 
-        if (numeroPrimo) {
-            System.out.println("É um número primo");
-        } else {
-            System.out.println("Não é um número primo");
+            if (acerto) {
+                acertos++;
+            }
         }
+
+        String tempo = calculaTempo(inicio);
+        precisao(acertos, totalPalavras, tempo);
 
     }
 
-    public static boolean ehPrimo(int numero) {
-        boolean resultado;
-        int divisoes = 0;
+    public static String gerarPalavra() {
+        String consoantes = "bcdfghjklmnpqrstvwxyz";
+        String vogais = "aeiou";
 
-        if (numero == 0 || numero == 1) {
-            resultado = false;
-        } else {
-            for (int contador = 1; contador <= numero; contador++) {
-                if (numero % contador == 0) {
-                    divisoes++;
-                }
-            }
-            if (divisoes == 2) {
-                resultado = true;
+        Random rdn = new Random();
+
+        String novaPalavra = "";
+        for (int i = 0; i < 8; i++) {
+            char letra = ' ';
+            if (i % 2 == 0) {
+                letra = consoantes.charAt(rdn.nextInt(21));
             } else {
-                resultado = false;
+                letra = vogais.charAt(rdn.nextInt(5));
             }
+            novaPalavra += letra;
         }
-        return resultado;
+        return novaPalavra;
     }
+
+    public static String calculaTempo(long inicio) {
+        long fim = new Date().getTime();
+        double tempoEmSeg = (fim - inicio) / 1000.0;
+        return (Math.round(tempoEmSeg) + "segundos");
+    }
+
+    public static void mostra(String texto) {
+        System.out.println(texto);
+    }
+
+    public static void precisao(int acertos, int totalPalavras, String tempo) {
+        double porcentagem = acertos * 1.0 / totalPalavras * 100;
+        mostra("Seu teste terminou!");
+        mostra("Precisão: " + porcentagem + "% - Tempo: " + tempo);
+    }
+
+    public static boolean acertou(String palavra, String palavraDigitada) {
+        if (palavraDigitada.equalsIgnoreCase(palavra)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

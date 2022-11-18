@@ -14,6 +14,8 @@ public class Ex01 {
         numeros[i] = ler.nextInt();
     }
 
+    System.out.println(); // pular linha
+
     exibir(numeros);
 
     }
