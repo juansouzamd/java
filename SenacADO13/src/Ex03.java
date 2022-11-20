@@ -1,61 +1,63 @@
 import java.util.*;
 
 class Ex03 {
-    public static void main(String[] args) {
+  public static void main(String[] args) {
 
-        System.out.println("\n===== Exercício 3 =====");
+    System.out.println("\n===== Exercício 1 =====");
 
-        System.out.println("\nPrograma para analisar se duas pessoas são compatíveis em uma rede social\n");
+    System.out.println("\nPrograma da loteria\n");
 
-        int tamanhoVetor = 5;
+    int vetor[] = new int[15];
 
-        String interessesPessoa01[] = new String[tamanhoVetor];
-        String interessesPessoa02[] = new String[tamanhoVetor];
+    vetor = gerarNumeros();
 
-        System.out.println("Digite os interesses da primeira pessoa");
+    exibirVetor(vetor);
 
-        interessesPessoa01 = preencherInteresses(tamanhoVetor);
+  }
 
-        System.out.println("\nDigite os interesses da segunda pessoa");
+  public static int[] gerarNumeros() {
+    Random rdn = new Random();
 
-        interessesPessoa02 = preencherInteresses(tamanhoVetor);
+    int array[] = new int[15];
+    int numSorteado, repeticao = 0;
 
-       int porcentagem = porcentagemCompararInteresses(tamanhoVetor, interessesPessoa01, interessesPessoa02);
+    for (int i = 0; i < array.length; i++) {
 
-       if (porcentagem > 50){
-        System.out.println("\nDeu Match!");
-        System.out.println("Similaridade: "+porcentagem+"%");
-       } else {
-        System.out.println("Fila anda!");
-       }
+      numSorteado = rdn.nextInt(25) + 1;
 
-    }
+      while (repeticao != 15) {
 
-    public static String[] preencherInteresses(int tamanho) {
-        Scanner ler = new Scanner(System.in);
+        if (array[repeticao] == numSorteado) {
 
-        String interesse[] = new String[tamanho];
+          numSorteado = rdn.nextInt(25) + 1;
+          repeticao = 0;
 
-        for (int i = 0; i < interesse.length; i++) {
-            System.out.println(i + 1 + " interesse:");
-            interesse[i] = ler.next();
+        } else {
+          repeticao++;
         }
-        return interesse;
+      }
+
+      array[i] = numSorteado;
+      repeticao = 0;
     }
+    return array;
+  }
 
-    public static int porcentagemCompararInteresses(int tamanho, String vetorInteresse01[], String vetorInteresse02[]) {
-        int cont = 0;
+  public static void exibirVetor(int vetor[]) {
 
-        for (int i = 0; i < tamanho; i++) {
+    for (int i = 0; i < vetor.length; i++) {
 
-            for (int j = 0; j < tamanho; j++) {
+      if ( i == vetor.length-1){
+        System.out.print(vetor[i]);
 
-                if (vetorInteresse01[j].equalsIgnoreCase(vetorInteresse02[i])) {
-                    cont++;
-                }
-            }
-        }
-        int porcentagem = (cont * 100) / tamanho;
-        return porcentagem;
+      } else if ((i + 1) % 5 == 0){
+        System.out.print(vetor[i]);
+        System.out.println();
+
+      } else {
+        System.out.print(vetor[i] + " - ");
+      }
     }
+    System.out.println("\n");
+  }
 }
