@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Loto",
+            "request": "launch",
+            "mainClass": "Loto",
+            "projectName": "java_ba28b038"
+        },
+        {
+            "type": "java",
+            "name": "Launch Ex10",
+            "request": "launch",
+            "mainClass": "Ex10",
+            "projectName": "java_ba28b038"
+        },
+        {
+            "type": "java",
             "name": "Launch Ex09",
             "request": "launch",
             "mainClass": "Ex09",

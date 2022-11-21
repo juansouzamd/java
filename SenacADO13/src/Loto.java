@@ -37,7 +37,6 @@ class Loto {
     return pos;
   }
 
-  
   public static int gerarNovo(int[] numeros) {
     Random rand = new Random();
 

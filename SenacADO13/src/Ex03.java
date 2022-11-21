@@ -3,7 +3,7 @@ import java.util.*;
 class Ex03 {
   public static void main(String[] args) {
 
-    System.out.println("\n===== Exercício 1 =====");
+    System.out.println("\n===== Exercício 3 =====");
 
     System.out.println("\nPrograma da loteria\n");
 

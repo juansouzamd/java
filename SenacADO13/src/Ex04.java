@@ -4,7 +4,7 @@ class Ex04 {
     public static void main(String[] args) {
         Scanner ler = new Scanner(System.in);
 
-        System.out.println("\n===== Exercício 2 =====\n");
+        System.out.println("\n===== Exercício 4 =====\n");
 
         System.out.println("Digite o tamanho do vetor");
         int tamanho = ler.nextInt();

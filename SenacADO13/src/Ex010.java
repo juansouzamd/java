@@ -3,7 +3,7 @@ import java.util.*;
 class Ex10 {
     public static void main(String[] args) {
 
-        System.out.println("\n===== Exercício 3 =====");
+        System.out.println("\n===== Exercício 10 =====");
 
         System.out.println("\nPrograma para analisar se duas pessoas são compatíveis em uma rede social\n");
 
