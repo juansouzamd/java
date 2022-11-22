@@ -34,16 +34,16 @@ class Ex08 {
     }
 
     public static double[] ordenar(double alturas[]) {
-        double menor = 0;
+        double seq = 0;
 
         for (int i = 1; i < alturas.length; i++) {
-            
+
             for (int j = 0; j < i; j++) {
 
                 if (alturas[i] < alturas[j]) {
-                    menor = alturas[i];
+                    seq = alturas[i];
                     alturas[i] = alturas[j];
-                    alturas[j] = menor;
+                    alturas[j] = seq;
                 }
             }
         }
