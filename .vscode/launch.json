@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Ex01Prof",
+            "request": "launch",
+            "mainClass": "Ex01Prof",
+            "projectName": "java_ba28b038"
+        },
+        {
+            "type": "java",
             "name": "Launch projetoIntegrador02",
             "request": "launch",
             "mainClass": "projetoIntegrador02",
