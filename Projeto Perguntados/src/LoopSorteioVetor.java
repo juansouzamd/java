@@ -26,9 +26,6 @@ public class LoopSorteioVetor {
             
            }
 
-                
- 
-
             vetorNumerosSorteados[contador] = numeroSorteado;
             contador++;
 

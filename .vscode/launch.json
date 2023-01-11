@@ -6,6 +6,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch List01",
+            "request": "launch",
+            "mainClass": "List01",
+            "projectName": "java_ba28b038"
+        },
+        {
+            "type": "java",
+            "name": "Launch RodarAplicacao",
+            "request": "launch",
+            "mainClass": "RodarAplicacao",
+            "projectName": "java_ba28b038"
+        },
+        {
+            "type": "java",
+            "name": "Launch Perguntados",
+            "request": "launch",
+            "mainClass": "Perguntados",
+            "projectName": "java_ba28b038"
+        },
+        {
+            "type": "java",
+            "name": "Launch AreaSobrecarga",
+            "request": "launch",
+            "mainClass": "AreaSobrecarga",
+            "projectName": "java_ba28b038"
+        },
+        {
+            "type": "java",
             "name": "Launch Ex01Prof",
             "request": "launch",
             "mainClass": "Ex01Prof",
