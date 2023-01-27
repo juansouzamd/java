@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch OrdenacaoList",
+            "request": "launch",
+            "mainClass": "OrdenacaoList",
+            "projectName": "java_ba28b038"
+        },
+        {
+            "type": "java",
             "name": "Launch List01",
             "request": "launch",
             "mainClass": "List01",

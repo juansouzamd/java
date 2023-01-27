@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class List01 {
+public class ExemploList {
     public static void main(String[] args) throws Exception {
         
         System.out.println("Crie uma lista e adicione 7 notas: ");
